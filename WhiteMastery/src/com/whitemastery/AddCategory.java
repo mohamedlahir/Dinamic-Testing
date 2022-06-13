@@ -16,7 +16,7 @@ import org.openqa.selenium.support.ui.Wait;
 
 public class AddCategory {
 	
-	String url = "https://pos.dinamic.io/";
+	String url = "https://web.dinamic.io/";
 	String email = "ops@thepumphouse.in";
 	String password = "TPH@dinamic02";
 	

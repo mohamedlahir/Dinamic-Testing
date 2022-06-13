@@ -1,6 +1,7 @@
 package com.whitemastery;
 
 import com.mongodb.BasicDBObject;
+
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;

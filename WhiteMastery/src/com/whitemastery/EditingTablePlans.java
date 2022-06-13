@@ -34,6 +34,7 @@ public class EditingTablePlans {
 		ChromeOptions co = new ChromeOptions();
 		co.addArguments("--disable-notifications");
 		driver = new ChromeDriver(co);
+
 		driver.get(url);
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(10))
 				.pollingEvery(Duration.ofSeconds(2)).ignoring(NoSuchElementException.class);
@@ -57,14 +58,13 @@ public class EditingTablePlans {
 		driver.findElement(By.xpath("//button[normalize-space()='0']")).click();
 
 	}
-	
-	@Test(priority = 0, description = "Creating the table Plan ", enabled = false )
+
+	@Test(priority = 0, description = "Creating the table Plan ", enabled = false)
 	public void creatingPlan() throws InterruptedException {
 		Actions action = new Actions(driver);
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(10))
 				.pollingEvery(Duration.ofSeconds(2)).ignoring(NoSuchElementException.class);
-		wait.until(
-				ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//a[@href='/management/landd']")));
+		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//a[@href='/management/landd']")));
 		driver.findElement(By.xpath("//a[@href='/management/landd']")).click();
 		wait.until(
 				ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//a[@href='/management/landd/plans']")));
@@ -98,7 +98,6 @@ public class EditingTablePlans {
 			Thread.sleep(3000);
 		}
 
-		
 		List<WebElement> total = driver
 				.findElements(By.xpath("//div[@id='div__itemcard'] //div[@class='header'] //h2"));
 		int tot = 0;
@@ -118,7 +117,8 @@ public class EditingTablePlans {
 		List<WebElement> total1 = driver
 				.findElements(By.xpath("//div[@id='div__itemcard'] //div[@class='header'] //h2"));
 		driver.navigate().refresh();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@id='navbarDropdownMenuLink_1'] //i[@class='material-icons']")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(
+				By.xpath("//a[@id='navbarDropdownMenuLink_1'] //i[@class='material-icons']")));
 		WebElement x = driver.findElement(By.xpath("//a[@id='navbarDropdownMenuLink_1'] //i[@class='material-icons']"));
 		Thread.sleep(2000);
 		wait.until(ExpectedConditions.elementToBeClickable(x));
@@ -140,13 +140,12 @@ public class EditingTablePlans {
 				}
 			}
 		}
-	
 
 	}
-	
-	@Test(priority = 1, description = "Editing the table count ",enabled=false)
+
+	@Test(priority = 1, description = "Editing the table count ", enabled = false)
 	public void editingTablePlans() throws InterruptedException {
-		
+
 		String value = "Edit";
 		Actions action = new Actions(driver);
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(10))
@@ -159,54 +158,58 @@ public class EditingTablePlans {
 		WebElement view = driver.findElement(By.xpath("//a[@href='/management/landd/plans']"));
 		action.click(view).build().perform();
 		Thread.sleep(5000);
-		List<WebElement>edit1 =driver.findElements(By.xpath("//a[@class='fw-600 d-flex align-items-center fs-16'] //i[@class='material-icons pr-1 mb-0 fw-600 daction']"));
-		for(int k =1;k<edit1.size();k++) {
+		List<WebElement> edit1 = driver.findElements(By.xpath(
+				"//a[@class='fw-600 d-flex align-items-center fs-16'] //i[@class='material-icons pr-1 mb-0 fw-600 daction']"));
+		for (int k = 1; k < edit1.size(); k++) {
 			edit1.get(k).click();
-		WebElement ele = driver.findElement(By.id("table-name"));
-		wait.until(ExpectedConditions.elementToBeClickable(ele));
-		action.click(ele).build().perform();
-		ele.clear();
-		action.sendKeys(ele, value + " " + k).build().perform();
-		WebElement numOfTables = driver.findElement(By.xpath("//input[@id='table_count']"));
-		action.click(numOfTables).build().perform();
-		numOfTables.clear();
-		action.sendKeys(numOfTables, "2");
-		wait.until(ExpectedConditions.elementToBeClickable(By.id("table_prefix")));
-		WebElement tableNamePrefix = driver.findElement(By.id("table_prefix"));
-		action.click(tableNamePrefix).build().perform();
-		tableNamePrefix.sendKeys("F" + k + "T");
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='ADD']")));
-		driver.findElement(By.xpath("//button[normalize-space()='ADD']")).click();
-		driver.navigate().refresh();
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@id='navbarDropdownMenuLink_1'] //i[@class='material-icons']")));
-		driver.findElement(By.xpath("//a[@id='navbarDropdownMenuLink_1'] //i[@class='material-icons']")).click();
-		driver.findElement(By.xpath("//a[@data-target='#admin_pin'] [1]")).click();
+			WebElement ele = driver.findElement(By.id("table-name"));
+			wait.until(ExpectedConditions.elementToBeClickable(ele));
+			action.click(ele).build().perform();
+			ele.clear();
+			action.sendKeys(ele, value + " " + k).build().perform();
+			WebElement numOfTables = driver.findElement(By.xpath("//input[@id='table_count']"));
+			action.click(numOfTables).build().perform();
+			numOfTables.clear();
+			action.sendKeys(numOfTables, "2");
+			wait.until(ExpectedConditions.elementToBeClickable(By.id("table_prefix")));
+			WebElement tableNamePrefix = driver.findElement(By.id("table_prefix"));
+			action.click(tableNamePrefix).build().perform();
+			tableNamePrefix.sendKeys("F" + k + "T");
+			Thread.sleep(1000);
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='ADD']")));
+			driver.findElement(By.xpath("//button[normalize-space()='ADD']")).click();
+			driver.navigate().refresh();
+			Thread.sleep(1000);
+			wait.until(ExpectedConditions.elementToBeClickable(
+					By.xpath("//a[@id='navbarDropdownMenuLink_1'] //i[@class='material-icons']")));
+			driver.findElement(By.xpath("//a[@id='navbarDropdownMenuLink_1'] //i[@class='material-icons']")).click();
+			driver.findElement(By.xpath("//a[@data-target='#admin_pin'] [1]")).click();
 
-		List<WebElement> pin = driver
-				.findElements(By.xpath("//div[@class='pin-container__body'] //button[@class='pin-button ripple']"));
+			List<WebElement> pin = driver
+					.findElements(By.xpath("//div[@class='pin-container__body'] //button[@class='pin-button ripple']"));
 
-		String[] p = { "7", "6", "0", "0" };
+			String[] p = { "7", "6", "0", "0" };
 
-		List al = Arrays.asList(p);
+			List al = Arrays.asList(p);
 
-		for (int l = 0; l < al.size(); l++) {
-			for (int inner = 0; inner < pin.size(); inner++) {
+			for (int l = 0; l < al.size(); l++) {
+				for (int inner = 0; inner < pin.size(); inner++) {
 
-				if (al.get(l).toString().contains(pin.get(inner).getText())) {
-					pin.get(inner).click();
+					if (al.get(l).toString().contains(pin.get(inner).getText())) {
+						pin.get(inner).click();
+					}
 				}
-			}
 
+			}
 		}
-		}}
-	@Test(priority = 2, description = "Deleting the Table plans",enabled=true)
+	}
+
+	@Test(priority = 2, description = "Deleting the Table plans", enabled = true)
 	public void removingTablePlans() throws InterruptedException {
 		Actions action = new Actions(driver);
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(10))
 				.pollingEvery(Duration.ofSeconds(2)).ignoring(NoSuchElementException.class);
-			
+
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@href='/management/landd']")));
 //		Thread.sleep(5000);
 		driver.findElement(By.xpath("//a[@href='/management/landd']")).click();
@@ -236,7 +239,8 @@ public class EditingTablePlans {
 			count++;
 		}
 		System.out.println("Total number of Table Plans Removed : " + count);
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@id='navbarDropdownMenuLink_1'] //i[@class='material-icons']")));
+		wait.until(ExpectedConditions
+				.elementToBeClickable(By.xpath("//a[@id='navbarDropdownMenuLink_1'] //i[@class='material-icons']")));
 		driver.findElement(By.xpath("//a[@id='navbarDropdownMenuLink_1'] //i[@class='material-icons']")).click();
 		driver.findElement(By.xpath("//a[@data-target='#admin_pin'] [1]")).click();
 
@@ -256,8 +260,9 @@ public class EditingTablePlans {
 			}
 
 		}
-		
+
 	}
+
 	@AfterTest
 	public void close() {
 
