@@ -15,25 +15,23 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 
 public class AddCategory {
-	
+
 	String url = "https://web.dinamic.io/";
 	String email = "ops@thepumphouse.in";
 	String password = "TPH@dinamic02";
-	
+
 	List<String> categoryNames = new ArrayList<>();
 	List<Integer> categoryRanks = new ArrayList<>();
-	
+
 	public void categoryAdding() throws InterruptedException {
-	
-		
-	for(int n=0;n<=20;n++) {
-		categoryRanks.add(n);
-		categoryNames.add(categoryRanks.get(n)+" Category");
-		
+
+		for (int n = 0; n <= 20; n++) {
+			categoryRanks.add(n);
+			categoryNames.add(categoryRanks.get(n) + " Category");
+
 		}
-	
-		System.out.println("Number of Ranks :"+categoryRanks.size());
-		
+
+		System.out.println("Number of Ranks :" + categoryRanks.size());
 
 		System.setProperty("webdriver.chrome.driver", "D:\\Driver\\chromedriver_win32\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
@@ -41,14 +39,14 @@ public class AddCategory {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
 		// Action object
-		
+
 		driver.manage().window().maximize();
 		driver.get(url);
 
 		// Fluent wait
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(10))
 				.pollingEvery(Duration.ofSeconds(2)).ignoring(NoSuchElementException.class);
-		
+
 		Actions action = new Actions(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email")));
 		WebElement user = driver.findElement(By.xpath("//input[@placeholder='Email']"));
@@ -61,42 +59,32 @@ public class AddCategory {
 		driver.findElement(By.xpath("//button[normalize-space()='6']")).click();
 		driver.findElement(By.xpath("//button[normalize-space()='0']")).click();
 		driver.findElement(By.xpath("//button[normalize-space()='0']")).click();
-//		Thread.sleep(5000);
-		//Clicking Staff menu under Management
-		driver.findElement(By.xpath("//a[normalize-space()='Staff']")).click();
-//		Thread.sleep(2000);
-		//Clicking Categories option on side menu
-		driver.findElement(By.xpath("//a[normalize-space()='Categories']")).click();
-//		Thread.sleep(2000);
-//		Clicking View option on categories
-		driver.findElement(By.xpath("//a[@href='/management/menu/categories']")).click();
-//		Thread.sleep(2000);
-		//Clicking add category for 20 times
-	System.out.println();
-		for(int j=1;j<categoryNames.size();j++) {
-			Thread.sleep(2000);
-		driver.findElement(By.xpath("//a[normalize-space()='ADD CATEGORY']")).click();
-		Thread.sleep(1000);	
-		WebElement enteringString = driver.findElement(By.xpath("//input[@id='category_name']"));
-		WebElement enteringRank = driver.findElement(By.xpath("//input[@id='category_rank']"));
-		action.moveToElement(enteringString).click().build().perform();
-		enteringString.sendKeys(categoryNames.get(j));
-		Thread.sleep(1000);
-		action.moveToElement(enteringRank).click().build().perform();
-		//Default value is present, Default value is iterating	
-		
-		Thread.sleep(2000);
-		enteringRank.clear();
-		enteringRank.sendKeys("2");
-		driver.findElement(By.xpath("//span[normalize-space()='NEXT']")).click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//span[normalize-space()='DONE']")).click();
-		Thread.sleep(1000); 
-		
-		}
-	
-        
-		driver.quit();
-		}
 
+		driver.findElement(By.xpath("//a[normalize-space()='Staff']")).click();
+
+		driver.findElement(By.xpath("//a[normalize-space()='Categories']")).click();
+		driver.findElement(By.xpath("//a[@href='/management/menu/categories']")).click();
+		System.out.println();
+		for (int j = 1; j < categoryNames.size(); j++) {
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//a[normalize-space()='ADD CATEGORY']")).click();
+			Thread.sleep(1000);
+			WebElement enteringString = driver.findElement(By.xpath("//input[@id='category_name']"));
+			WebElement enteringRank = driver.findElement(By.xpath("//input[@id='category_rank']"));
+			action.moveToElement(enteringString).click().build().perform();
+			enteringString.sendKeys(categoryNames.get(j));
+			Thread.sleep(1000);
+			action.moveToElement(enteringRank).click().build().perform();
+			// Default value is present, Default value is iterating
+
+			Thread.sleep(2000);
+			enteringRank.clear();
+			enteringRank.sendKeys("2");
+			driver.findElement(By.xpath("//span[normalize-space()='NEXT']")).click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//span[normalize-space()='DONE']")).click();
+			Thread.sleep(1000);
+		}
+		driver.quit();
+	}
 }
