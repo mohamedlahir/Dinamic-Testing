@@ -20,7 +20,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class EditingTablePlans {
-//hello
+
 	WebDriver driver;
 	String url = "https://pos.dinamic.io/";
 	String email = "ops@thepumphouse.in";
