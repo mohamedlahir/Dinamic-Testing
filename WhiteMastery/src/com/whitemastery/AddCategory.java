@@ -14,6 +14,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
+import org.testng.annotations.Test;
+
 
 public class AddCategory {
 
@@ -24,6 +26,7 @@ public class AddCategory {
 	List<String> categoryNames = new ArrayList<>();
 	List<Integer> categoryRanks = new ArrayList<>();
 
+	@Test
 	public void categoryAdding() throws InterruptedException {
 
 		for (int n = 0; n <= 20; n++) {

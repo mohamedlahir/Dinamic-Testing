@@ -21,6 +21,14 @@
   <scope>test</scope>
 </dependency>
 
+<!-- https://mvnrepository.com/artifact/org.webjars/jquery -->
+<dependency>
+    <groupId>org.webjars</groupId>
+    <artifactId>jquery</artifactId>
+    <version>3.5.1</version>
+</dependency>
+
+
    <!-- https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver -->
 <dependency>
     <groupId>org.mongodb</groupId>

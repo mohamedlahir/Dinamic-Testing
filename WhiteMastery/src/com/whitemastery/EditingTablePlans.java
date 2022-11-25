@@ -27,7 +27,7 @@ public class EditingTablePlans {
 	String password = "TPH@dinamic02";
 	int tableCountEdit = 15;
 
-	@BeforeTest
+	@Test
 	public void bft() throws InterruptedException {
 
 		System.setProperty("webdriver.chrome.driver", "D:\\Driver\\chromedriver_win32\\chromedriver.exe");
