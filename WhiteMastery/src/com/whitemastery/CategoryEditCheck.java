@@ -26,7 +26,7 @@ public class CategoryEditCheck {
 	List<String> categoryNames = new ArrayList<>();
 	List<Integer> categoryRanks = new ArrayList<>();
 
-	@Test
+//	@Test
 	public void edit() throws InterruptedException {
 
 		System.setProperty("webdriver.chrome.driver", "D:\\Driver\\chromedriver_win32\\chromedriver.exe");

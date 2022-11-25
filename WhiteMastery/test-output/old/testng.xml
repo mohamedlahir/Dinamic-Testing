@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Testing Google Apps">
-    <test name="Regression">
-         <classes>
-             <class name="com.whitemastery.Addcategory"/>
-             <class name="com.whitemastery.CategoryEditCheck"/>
-             <class name="com.whitemastery.EditingTablePlan"/>
-          </classes>
-     </test> <!-- Test -->
-</suite> <!-- Suite -->
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Default suite" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test" verbose="2">
+    <classes>
+      <class name="com.whitemastery.AddCategory"/>
+    </classes>
+  </test> <!-- Default test -->
+</suite> <!-- Default suite -->

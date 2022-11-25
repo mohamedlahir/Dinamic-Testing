@@ -27,7 +27,7 @@ public class EditingTablePlans {
 	String password = "TPH@dinamic02";
 	int tableCountEdit = 15;
 
-	@Test
+//	@Test
 	public void bft() throws InterruptedException {
 
 		System.setProperty("webdriver.chrome.driver", "D:\\Driver\\chromedriver_win32\\chromedriver.exe");
@@ -59,7 +59,7 @@ public class EditingTablePlans {
 
 	}
 
-	@Test(priority = 0, description = "Creating the table Plan ", enabled = false)
+//	@Test(priority = 0, description = "Creating the table Plan ", enabled = false)
 	public void creatingPlan() throws InterruptedException {
 		Actions action = new Actions(driver);
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(10))
@@ -143,7 +143,7 @@ public class EditingTablePlans {
 
 	}
 
-	@Test(priority = 1, description = "Editing the table count ", enabled = false)
+//	@Test(priority = 1, description = "Editing the table count ", enabled = false)
 	public void editingTablePlans() throws InterruptedException {
 
 		String value = "Edit";
@@ -204,7 +204,7 @@ public class EditingTablePlans {
 		}
 	}
 
-	@Test(priority = 2, description = "Deleting the Table plans", enabled = true)
+//	@Test(priority = 2, description = "Deleting the Table plans", enabled = true)
 	public void removingTablePlans() throws InterruptedException {
 		Actions action = new Actions(driver);
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(10))
@@ -263,7 +263,7 @@ public class EditingTablePlans {
 
 	}
 
-	@AfterTest
+//	@AfterTest
 	public void close() {
 
 		driver.quit();

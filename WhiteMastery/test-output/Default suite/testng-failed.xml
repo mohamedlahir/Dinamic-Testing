@@ -3,11 +3,19 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
+      <class name="com.whitemastery.AddCategory">
+        <methods>
+          <include name="categoryAdding"/>
+        </methods>
+      </class> <!-- com.whitemastery.AddCategory -->
+      <class name="com.whitemastery.CategoryEditCheck">
+        <methods>
+          <include name="edit"/>
+        </methods>
+      </class> <!-- com.whitemastery.CategoryEditCheck -->
       <class name="com.whitemastery.EditingTablePlans">
         <methods>
-          <include name="close"/>
           <include name="bft"/>
-          <include name="removingTablePlans"/>
         </methods>
       </class> <!-- com.whitemastery.EditingTablePlans -->
     </classes>
