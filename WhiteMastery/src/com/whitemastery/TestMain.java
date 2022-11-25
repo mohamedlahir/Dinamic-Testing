@@ -88,7 +88,7 @@ public class TestMain {
 				,"12366454567890","1234567555890","123444567890","12344567890","123444567890"};
 
 		String customerList[] = {
-				"Tippu"
+				"Tipu"
 				, "Banu"
 				,"Sumaya"
 				, "Vineet"
