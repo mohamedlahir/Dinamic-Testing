@@ -46,7 +46,7 @@ public class AddCategory {
 
 		driver.manage().window().maximize();
 		driver.get(url);
-//
+
 		// Fluent wait
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(10))
 				.pollingEvery(Duration.ofSeconds(2)).ignoring(NoSuchElementException.class);
