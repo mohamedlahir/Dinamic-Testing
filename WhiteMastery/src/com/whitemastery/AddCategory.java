@@ -28,7 +28,7 @@ public class AddCategory {
 
 	@Test
 	public void categoryAdding() throws InterruptedException {
-
+//lahir
 		for (int n = 0; n <= 20; n++) {
 			categoryRanks.add(n);
 			categoryNames.add(categoryRanks.get(n) + " Category");
