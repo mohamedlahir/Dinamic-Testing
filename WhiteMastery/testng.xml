@@ -4,6 +4,7 @@
   <test thread-count="5" name="Default test" verbose="2">
     <classes>
       <class name="com.whitemastery.AddCategory"/>
+      <class name="com.whitemastery.CategoryEditCheck"/>
     </classes>
   </test> <!-- Default test -->
 </suite> <!-- Default suite -->
