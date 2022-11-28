@@ -35,7 +35,7 @@ public class TestMain {
 //		DBAccess dbc = new DBAccess();
 //		dbc.db();
 
-		LoginPage lp = new LoginPage();
+//		LoginPage lp = new LoginPage();
 //		lp.LoginValidation();
 
 		CompanyDetails cd = new CompanyDetails();
