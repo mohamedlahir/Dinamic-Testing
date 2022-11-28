@@ -8,16 +8,6 @@
           <include name="categoryAdding"/>
         </methods>
       </class> <!-- com.whitemastery.AddCategory -->
-      <class name="com.whitemastery.CategoryEditCheck">
-        <methods>
-          <include name="edit"/>
-        </methods>
-      </class> <!-- com.whitemastery.CategoryEditCheck -->
-      <class name="com.whitemastery.EditingTablePlans">
-        <methods>
-          <include name="bft"/>
-        </methods>
-      </class> <!-- com.whitemastery.EditingTablePlans -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
