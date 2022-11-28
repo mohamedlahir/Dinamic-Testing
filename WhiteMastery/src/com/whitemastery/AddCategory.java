@@ -18,7 +18,7 @@ import org.testng.annotations.Test;
 
 
 public class AddCategory {
-
+//
 	String url = "https://web.dinamic.io/";
 	String email = "ops@thepumphouse.in";
 	String password = "TPH@dinamic02";
