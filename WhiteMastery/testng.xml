@@ -3,8 +3,21 @@
 <suite name="Default suite" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test" verbose="2">
     <classes>
-      <class name="com.whitemastery.AddCategory"/>
       <class name="com.whitemastery.CategoryEditCheck"/>
+      <class name="com.whitemastery.OrderingFood"/>
+      <class name="com.whitemastery.DeletingCategory"/>
+      <class name="com.whitemastery.DataBaseConnnect"/>
+      <class name="com.whitemastery.TablePlan"/>
+      <class name="com.whitemastery.CategoryVisibilityCheck"/>
+      <class name="com.whitemastery.RemoveCategories"/>
+      <class name="com.whitemastery.Grid"/>
+      <class name="com.whitemastery.LoginPage"/>
+      <class name="com.whitemastery.CompanyDetails"/>
+      <class name="com.whitemastery.DBAccess"/>
+      <class name="com.whitemastery.RemovingCategory"/>
+      <class name="com.whitemastery.EditingTablePlans"/>
+      <class name="com.whitemastery.AddCategory"/>
+      <class name="com.whitemastery.OrderRepeat"/>
     </classes>
   </test> <!-- Default test -->
 </suite> <!-- Default suite -->
